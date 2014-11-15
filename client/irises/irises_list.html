@@ -1,0 +1,26 @@
+<template name="irisList">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name:</th>
+        <th>Type:</th>
+        <th>Year:</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {{#each irises}}
+        <tr>{{>irisItem}}</tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+  {{> insertIrisForm}}
+</template>

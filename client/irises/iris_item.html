@@ -1,0 +1,48 @@
+<template name="irisItem">
+  <td><a href="{{pathFor 'irisPage'}}">{{name}}</a> - ({{hybridizer}})</td>
+  <td>{{category}}</td>
+  <td>{{year}}</td>
+  <td>
+    {{#if garden1}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td>
+    {{#if garden2}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td>
+    {{#if garden3}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td>
+    {{#if garden4}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td>
+    {{#if garden5}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td>
+    {{#if garden6}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td><button class="delete right">&times;</button></td>
+</template>
