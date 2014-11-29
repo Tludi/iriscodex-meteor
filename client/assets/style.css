@@ -11,10 +11,26 @@
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
 
+html {
+  height: 100%;
+}
 
 body {
-  background: #eee;
-  color: #666666; }
+  background: #ddd;
+  color: #666666;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  height: 100%; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: blue;
+  height: 40px;
+  color: #eee;
+}
 
 .navbar {
   margin-bottom: 10px; }
@@ -166,4 +182,32 @@ body {
 
 .right {
   float: right;
+}
+
+.mod-actions {
+  border-left: 1px solid #ccc;
+  padding-left: 5px;
+}
+
+.mod-actions:hover {
+  cursor: hand;
+}
+
+.garden-margin {
+  padding-left: 0px;
+  margin-left: -5px;
+}
+.garden-text {
+  /*margin-left: 5px;*/
+  /*width: 10px;*/
+}
+.list-garden-item {
+  padding:10px 15px;
+}
+.h5 {
+  font-size: 20px;
+}
+
+.garden-number {
+  margin-left: 7px;
 }

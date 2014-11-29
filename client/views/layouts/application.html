@@ -1,11 +1,13 @@
 <template name="application">
-  <div class="container">
-    <header class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="navbar-header">
         <a href="{{pathFor 'irisList'}}" class="navbar-brand">Iris Codex</a>
         <a href="{{pathFor 'insertIrisForm'}}" class="navbar-brand">Add Iris</a>
+        <a href="{{pathFor 'testListPage'}}" class="navbar-brand">lab page</a>
       </div>
     </header>
+    
     <div id="main" class="row-fluid">
       {{> yield}}
     </div>

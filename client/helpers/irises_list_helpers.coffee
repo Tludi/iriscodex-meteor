@@ -6,8 +6,6 @@ Template.irisList.helpers
     Gardens.find()
 
 
-Template.irisItem.events
-  "click .delete":  ->
-    Meteor.call("irisDelete", this._id)
 
-    
+
+

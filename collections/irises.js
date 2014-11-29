@@ -1,6 +1,16 @@
 Irises = new Mongo.Collection('irises');
 
 Irises.attachSchema(new SimpleSchema({
+  group: {
+    type: String,
+    label: "Group",
+    allowedValues: ["Bearded", "Beardless"],
+    autoform: {
+      afFieldInput: {
+        firstOption: "(Select a Group)"
+      }
+    }
+  },
   name: {
     type: String,
     label: "Name",
@@ -10,18 +20,33 @@ Irises.attachSchema(new SimpleSchema({
     type: Boolean,
     label: "Region 13"
   },
-  hybridizer: {
+  hybridizerfirst: {
     type: String,
-    label: "Hybridizer"
+    label: "Hybridizer First Name"
+  },
+  hybridizerlast: {
+  type: String,
+  label: "Hybridizer Last Name"
   },
   category: {
     type: String,
     label: "Type",
-    max: 10
+    allowedValues: ["BIVE", "CALS", "LA", "LAEV", "PSEU", "SIB", "SINO", "SPEC-X", "SPU", "VERS"],
+    autoform: {
+      afFieldInput: {
+        firstOption: "(Select a Type)"
+      }
+    }
   },
   year: {
     type: String,
-    label: "Year"
+    label: "Year",
+    allowedValues: ["2008", "2009", "2010", "2011", "2012", "2013", "2014"],
+    autoform: {
+      afFieldInput: {
+        firstOption: "(Select Year)"
+      }
+    }
   },
   garden1: {
     type: Boolean,
@@ -50,8 +75,8 @@ Irises.attachSchema(new SimpleSchema({
 }));
 
 
+
 Meteor.methods({
-  
   // irisCreate: function(iris){
   //   Irises.insert({
   //     name: iris.name,
@@ -63,5 +88,10 @@ Meteor.methods({
 
   irisDelete: function(irisID){
     Irises.remove(irisID);
+  },
+
+  irisEdit: function(irisID){
+    alert("edit this thing");
+    // Irises.remove(irisID);
   }
 });
