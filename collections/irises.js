@@ -31,7 +31,7 @@ Irises.attachSchema(new SimpleSchema({
   category: {
     type: String,
     label: "Type",
-    allowedValues: ["BIVE", "CALS", "LA", "LAEV", "PSEU", "SIB", "SINO", "SPEC-X", "SPU", "VERS"],
+    allowedValues: ["BB", "BIVE", "CALS", "IB", "LA", "LAEV", "PCI", "PSEU", "SDB", "SIB", "SINO", "SPEC-X", "SPU", "TB", "VERS"],
     autoform: {
       afFieldInput: {
         firstOption: "(Select a Type)"

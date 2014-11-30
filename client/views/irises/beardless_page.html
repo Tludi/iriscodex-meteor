@@ -1,8 +1,8 @@
 <!-- iris-test-page.html -->
-<template name="testListPage">
+<template name="beardlessPage">
   <section class="panel irispanel"> 
     <header class="panel-heading bg bg-primary"> 
-      <a class="btn btn-link pull-right nav"><i class="fa fa-search fa fa-light fa-lg"></i></a> Irises - All
+      <a class="btn btn-link pull-right nav"><i class="fa fa-search fa fa-light fa-lg"></i></a> Irises - Beardless
     </header>
 
     <ul class="list-group">
@@ -32,18 +32,6 @@
       </li>
     </ul>
 
-<!--     <div class="row">
-      <div>
-        <div class="pull-right garden-margin">
-          <span class="garden-text">1 2 3 4 5 6 </span>
-          <span class="garden-text">2</span>
-          <span class="garden-text">3</span>
-          <span class="garden-text">4</span>
-          <span class="garden-text">5</span>
-          <span class="garden-text">6</span>      
-        </div>
-      </div>
-    </div> -->
     <ul class="list-group">
       {{#each irises}}
         {{>irisTestItem}}
