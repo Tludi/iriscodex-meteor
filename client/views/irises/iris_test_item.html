@@ -1,5 +1,5 @@
 <template name="irisTestItem">
-
+    <a href="{{pathFor 'irisPage'}}" class="h5">
     <li class="list-group-item" data-toggle="class:active" data-target="#todo-2"> 
       <div class="media">
 
@@ -49,11 +49,12 @@
 
         <div class="media-body"> 
           <div>
-            <a href="{{pathFor 'irisPage'}}" class="h5">{{name}}</a>
+            {{name}}
           </div>   
           <small class="text-muted">{{hybridizerlast}} - {{year}}</small>
         </div> 
       </div> 
-    </li> 
+    </li>
+    </a>
 
 </template>

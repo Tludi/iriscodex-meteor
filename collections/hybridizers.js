@@ -10,3 +10,12 @@ Hybridizers.attachSchema(new SimpleSchema({
     label: "Hybridizer Last Name"
   }
 }));
+
+
+// move this to its own file
+Meteor.methods({
+
+  hybridizerDelete: function(hybridizerID){
+    Hybridizers.remove(hybridizerID);
+  }
+});

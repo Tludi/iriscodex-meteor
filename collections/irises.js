@@ -13,8 +13,7 @@ Irises.attachSchema(new SimpleSchema({
   },
   name: {
     type: String,
-    label: "Name",
-    max: 20
+    label: "Iris Name"
   },
   region13: {
     type: Boolean,
@@ -22,11 +21,33 @@ Irises.attachSchema(new SimpleSchema({
   },
   hybridizerfirst: {
     type: String,
-    label: "Hybridizer First Name"
+    label: "Hybridizer First Name",
+    autoform: {
+      options: function() {
+        var options = [];
+        Hybridizers.find().forEach(function(element){
+          options.push({
+            label: element.firstName, value: element.fristName
+          })
+        });
+        return options;
+      }
+    }
   },
   hybridizerlast: {
   type: String,
-  label: "Hybridizer Last Name"
+  label: "Hybridizer Last Name",
+  autoform: {
+      options: function() {
+        var options = [];
+        Hybridizers.find().forEach(function(element){
+          options.push({
+            label: element.lastName, value: element.lastName
+          })
+        });
+        return options;
+      }
+    }
   },
   category: {
     type: String,
@@ -41,7 +62,7 @@ Irises.attachSchema(new SimpleSchema({
   year: {
     type: String,
     label: "Year",
-    allowedValues: ["2008", "2009", "2010", "2011", "2012", "2013", "2014"],
+    allowedValues: ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"],
     autoform: {
       afFieldInput: {
         firstOption: "(Select Year)"
@@ -77,14 +98,6 @@ Irises.attachSchema(new SimpleSchema({
 
 
 Meteor.methods({
-  // irisCreate: function(iris){
-  //   Irises.insert({
-  //     name: iris.name,
-  //     category: iris.category,
-  //     aitken: iris.aitken,
-  //     wild: iris.wild
-  //   });
-  // },
 
   irisDelete: function(irisID){
     Irises.remove(irisID);
