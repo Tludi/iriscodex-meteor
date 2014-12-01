@@ -1,23 +1,33 @@
 <template name="hybridizers">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>First Name:</th>
-        <th>Last Name:</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      {{#each hybridizers}}
-        <tr>
-          <td>{{firstName}}</td>
-          <td>{{lastName}}</td>
-        </tr>
-      {{/each}}
-
-    </tbody>
-  </table>
+  <ul class="list-group">
+    <li class="list-group-item list-garden-item"> 
+      <div class="media"> 
+        <div class="media-body"> 
+          <div>
+            <a href="#" class="">name1</a>
+          </div>   
+        </div>
+      </div>
+    </li>
+  </ul>
+  <ul class="list-group">
+    
+    {{#each hybridizers}}
+     <li class="list-group-item" data-toggle="class:active" data-target="#todo-2"> 
+      <div class="media">
+        <div class="media-body">
+          <div class="pull-right text-primary m-t-small"> 
+            <small>{{firstName}} </small>
+            <small>{{lastName}}</small>
+            <span class="mod-actions">
+              <small><a href="{{pathFor 'updateHybridizerForm'}}"><i class="ext-right fa fa-lg fa-pencil"></i></a></small>
+              <small><a href="#"><i class="ext-right delete fa fa-lg fa-times-circle"></i></a></small>
+            </span>
+          </div>
+        </div>
+      </div>
+     </li>
+    {{/each}}
+  </ul>
   {{> insertHybridizerForm}}
 </template>
