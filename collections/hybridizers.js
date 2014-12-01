@@ -10,26 +10,3 @@ Hybridizers.attachSchema(new SimpleSchema({
     label: "Hybridizer Last Name"
   }
 }));
-
-
-// move the following to a seperate methods file
-
-Meteor.methods({
-  // irisCreate: function(iris){
-  //   Irises.insert({
-  //     name: iris.name,
-  //     category: iris.category,
-  //     aitken: iris.aitken,
-  //     wild: iris.wild
-  //   });
-  // },
-
-  hybridizerDelete: function(hybridizerID){
-    Hybridizers.remove(hybridizerID);
-  },
-
-  hybridizerEdit: function(hybridizerID){
-    alert("edit this thing");
-    // Irises.remove(irisID);
-  }
-});
