@@ -1,5 +1,7 @@
 Irises = new Mongo.Collection('irises');
 
+Irises.initEasySearch(['name', 'hybridizerlast']);
+
 Irises.attachSchema(new SimpleSchema({
   group: {
     type: String,
@@ -97,14 +99,4 @@ Irises.attachSchema(new SimpleSchema({
 
 
 
-Meteor.methods({
 
-  irisDelete: function(irisID){
-    Irises.remove(irisID);
-  },
-
-  irisEdit: function(irisID){
-    alert("edit this thing");
-    // Irises.remove(irisID);
-  }
-});

@@ -3,6 +3,9 @@
   <section class="panel irispanel"> 
     <header class="panel-heading bg bg-primary"> 
       <a class="btn btn-link pull-right nav"><i class="fa fa-search fa fa-light fa-lg"></i></a> Irises - All
+      <span class="pull-right search-text">
+        {{> searchBox}}
+      </span>
     </header>
 
     <ul class="list-group">
@@ -45,10 +48,21 @@
       </div>
     </div> -->
     <ul class="list-group">
-      {{#each irises}}
-        {{>irisTestItem}}
-      {{/each}}
+      {{#ifEsInputIsEmpty index="irises"}}
+        {{#each irises}}
+          {{> irisTestItem}}
+        {{/each}}
+      {{/ifEsInputIsEmpty}}
 
+      {{#esEach index="irises"}}
+        {{> irisTestItem}}
+        <!-- {{showSearch}} -->
+      {{/esEach}}
+
+      {{#ifEsHasNoResults index="irises"}}
+        {{> irisNotFound}}
+      {{/ifEsHasNoResults}}
+      
     </ul> 
   </section>
 </template>
