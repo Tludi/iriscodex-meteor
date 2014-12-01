@@ -29,5 +29,7 @@ Router.route('testListPage', {name: 'testListPage'});
 Router.route('bearded', {name: 'beardedPage'});
 Router.route('beardless', {name: 'beardlessPage'});
 
+Router.route('hybridizers', {name: 'hybridizers'});
+
 // returns the not found page when invalid id is passed to irises
 Router.onBeforeAction('dataNotFound', {only: 'irisPage'});
