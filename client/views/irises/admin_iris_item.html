@@ -1,0 +1,52 @@
+<template name="adminIrisItem">
+  <td>{{group}}</td>
+  <td><a href="{{pathFor 'adminSingleIrisPage'}}">{{name}}</a> - ({{hybridizerlast}})</td>
+  <td class="small">{{category}}</td>
+  <td class="small">{{year}}</td>
+  <td class="small">
+    {{#if garden1}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td class="small">
+    {{#if garden2}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td class="small">
+    {{#if garden3}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td class="small">
+    {{#if garden4}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td class="small">
+    {{#if garden5}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+  <td class="small">
+    {{#if garden6}}
+      &#x2713;
+    {{else}}
+      
+    {{/if}}
+  </td>
+<!--   <td><a href="{{pathFor 'updateIrisForm'}}"><span class="right glyphicon glyphicon-pencil small" aria-hidden="true"></span></a></td>
+  <td><span class="delete right glyphicon glyphicon-remove-circle small" aria-hidden="true"></span></td> -->
+
+  
+</template>

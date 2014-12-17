@@ -1,52 +1,60 @@
 <template name="irisItem">
-  <td>{{group}}</td>
-  <td><a href="{{pathFor 'irisPage'}}">{{name}}</a> - ({{hybridizerlast}})</td>
-  <td class="small">{{category}}</td>
-  <td class="small">{{year}}</td>
-  <td class="small">
-    {{#if garden1}}
-      &#x2713;
-    {{else}}
-      
-    {{/if}}
-  </td>
-  <td class="small">
-    {{#if garden2}}
-      &#x2713;
-    {{else}}
-      
-    {{/if}}
-  </td>
-  <td class="small">
-    {{#if garden3}}
-      &#x2713;
-    {{else}}
-      
-    {{/if}}
-  </td>
-  <td class="small">
-    {{#if garden4}}
-      &#x2713;
-    {{else}}
-      
-    {{/if}}
-  </td>
-  <td class="small">
-    {{#if garden5}}
-      &#x2713;
-    {{else}}
-      
-    {{/if}}
-  </td>
-  <td class="small">
-    {{#if garden6}}
-      &#x2713;
-    {{else}}
-      
-    {{/if}}
-  </td>
-  <td><a href="{{pathFor 'updateIrisForm'}}"><span class="right glyphicon glyphicon-pencil small" aria-hidden="true"></span></a></td>
-  <td><span class="delete right glyphicon glyphicon-remove-circle small" aria-hidden="true"></span></td>
+    <a href="{{pathFor 'irisPage'}}" class="h5">
+    <li class="list-group-item" data-toggle="class:active" data-target="#todo-2"> 
+      <div class="media">
 
-  
+        <span class="pull-left thumb-small m-t-mini"> 
+          <small>{{category}}</small><br>
+          {{#if region13}}
+            <small><i class="fa fa-star-o fa-sm text-active text-primary"></i></small>
+          {{/if}}
+        </span>
+
+        <div class="pull-right text-primary m-t-small"> 
+          {{#if garden1}}
+            <small><i class="fa fa-circle text-active text-primary"></i></small>
+          {{else}}
+            <small><i class="fa fa-circle-thin text-active text-primary"></i></small>
+          {{/if}}
+          {{#if garden2}}
+            <small><i class="fa fa-circle text-active text-primary"></i></small>
+          {{else}}
+            <small><i class="fa fa-circle-thin text-active text-primary"></i></small>
+          {{/if}}
+          {{#if garden3}}
+            <small><i class="fa fa-circle text-active text-primary"></i></small>
+          {{else}}
+            <small><i class="fa fa-circle-thin text-active text-primary"></i></small>
+          {{/if}}
+          {{#if garden4}}
+            <small><i class="fa fa-circle text-active text-primary"></i></small>
+          {{else}}
+            <small><i class="fa fa-circle-thin text-active text-primary"></i></small>
+          {{/if}}
+          {{#if garden5}}
+            <small><i class="fa fa-circle text-active text-primary"></i></small>
+          {{else}}
+            <small><i class="fa fa-circle-thin text-active text-primary"></i></small>
+          {{/if}}
+          {{#if garden6}}
+            <small><i class="fa fa-circle text-active text-primary"></i></small>
+          {{else}}
+            <small><i class="fa fa-circle-thin text-active text-primary"></i></small>
+          {{/if}}
+ <!--            <span class="mod-actions">
+              <small><a href="{{pathFor 'updateIrisForm'}}"><i class="ext-right fa fa-lg fa-pencil"></i></a></small>
+              <small><a href="#"><i class="ext-right delete fa fa-lg fa-times-circle"></i></a></small>
+            </span> -->
+        </div> 
+
+        <div class="media-body"> 
+          <div>
+            {{name}}
+          </div>   
+          <small class="text-muted">{{hybridizerlast}} - {{year}}</small>
+        </div> 
+      </div> 
+    </li>
+    </a>
+
 </template>

@@ -29,7 +29,7 @@ Irises.attachSchema(new SimpleSchema({
         var options = [];
         Hybridizers.find().forEach(function(element){
           options.push({
-            label: element.firstName, value: element.fristName
+            label: element.firstName, value: element.firstName
           })
         });
         return options;

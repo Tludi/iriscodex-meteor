@@ -1,8 +1,11 @@
 <!-- iris-test-page.html -->
-<template name="beardedPage">
+<template name="irisList">
   <section class="panel irispanel"> 
     <header class="panel-heading bg bg-primary"> 
-      <a class="btn btn-link pull-right nav"><i class="fa fa-search fa fa-light fa-lg"></i></a> Irises - Bearded
+      <a class="btn btn-link pull-right nav"><i class="fa fa-search fa fa-light fa-lg"></i></a> Irises - All
+      <span class="pull-right search-text">
+        {{> searchBox}}
+      </span>
     </header>
 
     <ul class="list-group">
@@ -32,11 +35,34 @@
       </li>
     </ul>
 
+<!--     <div class="row">
+      <div>
+        <div class="pull-right garden-margin">
+          <span class="garden-text">1 2 3 4 5 6 </span>
+          <span class="garden-text">2</span>
+          <span class="garden-text">3</span>
+          <span class="garden-text">4</span>
+          <span class="garden-text">5</span>
+          <span class="garden-text">6</span>      
+        </div>
+      </div>
+    </div> -->
     <ul class="list-group">
-      {{#each irises}}
-        {{>irisItem}}
-      {{/each}}
+      {{#ifEsInputIsEmpty index="irises"}}
+        {{#each irises}}
+          {{> irisItem}}
+        {{/each}}
+      {{/ifEsInputIsEmpty}}
 
+      {{#esEach index="irises"}}
+        {{> irisItem}}
+        <!-- {{showSearch}} -->
+      {{/esEach}}
+
+      {{#ifEsHasNoResults index="irises"}}
+        {{> irisNotFound}}
+      {{/ifEsHasNoResults}}
+      
     </ul> 
   </section>
 </template>

@@ -9,7 +9,15 @@ Router.configure({
   waitOn: function() { return Meteor.subscribe('irises'); }
 });
 
-Router.route('/', {name: 'irisList'});
+Router.route('/', {name: 'dashboard'});
+Router.route('/admin/irises', {name: 'adminIrises'});
+Router.route('/admin/irises/:_id', {
+  name: 'adminSingleIrisPage',
+  data: function() { return Irises.findOne(this.params._id); }
+});
+
+
+Router.route('/irislist', {name: 'irisList'});
 
 Router.route('irises/:_id', {
   name: 'irisPage',
@@ -18,7 +26,7 @@ Router.route('irises/:_id', {
 
 Router.route('/irises/:_id/edit', {
   name: 'updateIrisForm',
-  data: function() { return Irises.findOne(this.params._id)}
+  data: function() { return Irises.find(this.params._id)}
 });
 
 Router.route('newIris', {name: 'insertIrisForm'});
@@ -26,7 +34,15 @@ Router.route('newIris', {name: 'insertIrisForm'});
 // route for a lab test page of iris lists
 Router.route('testListPage', {name: 'testListPage'});
 
-Router.route('bearded', {name: 'beardedPage'});
+
+
+
+Router.route('bearded', function() {
+  var iris = Irises.find({group: "Bearded"});
+  this.render('beardedPage', {data: iris});
+});
+
+
 Router.route('beardless', {name: 'beardlessPage'});
 
 
